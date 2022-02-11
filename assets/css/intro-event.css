@@ -1,0 +1,458 @@
+body * {
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    margin: 0;
+    font-family: "DB Ozone X", Prompt, SansSerif;
+}
+#IntroEvent .intro-banner,
+#IntroEvent .intro-click {
+    height: 75vh;
+}
+@media (max-width: 1920px) {
+    #IntroEvent .intro-banner,
+    #IntroEvent .intro-click {
+        height: 70vh;
+    }
+}
+@media (max-width: 991.98px) {
+    #IntroEvent .intro-banner,
+    #IntroEvent .intro-click {
+        height: 45vh;
+    }
+}
+@media (max-width: 767.98px) {
+    #IntroEvent .intro-banner,
+    #IntroEvent .intro-click {
+        height: 35vh;
+    }
+}
+@media (max-width: 575.98px) {
+    #IntroEvent .intro-banner,
+    #IntroEvent .intro-click {
+        height: 35vh;
+    }
+}
+@media (max-width: 375px) {
+    #IntroEvent .intro-banner,
+    #IntroEvent .intro-click {
+        height: 25vh;
+    }
+}
+@media (max-width: 1023px) and (orientation: landscape) {
+    #IntroEvent .intro-banner,
+    #IntroEvent .intro-click {
+        height: 75vh;
+    }
+}
+#IntroEvent .intro-click {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+#IntroEvent .intro-banner {
+    position: relative;
+    z-index: 1;
+    background-image: url(https://ku.ac.th/assets/images/intro-event/intro_bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    cursor: pointer;
+}
+@media (max-width: 1023px) and (orientation: landscape) {
+    #IntroEvent .intro-banner {
+        background-size: 150%;
+    }
+}
+#IntroEvent .intro-links {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-image: url(https://ku.ac.th/assets/images/intro-event/intro_bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    height: 25vh;
+    padding-bottom: 4.375rem;
+}
+@media (max-width: 1920px) {
+    #IntroEvent .intro-links {
+        height: 30vh;
+        padding: 1.875rem 0;
+    }
+}
+@media (max-width: 991.98px) {
+    #IntroEvent .intro-links {
+        height: 55vh;
+    }
+}
+@media (max-width: 767.98px) {
+    #IntroEvent .intro-links {
+        flex-wrap: nowrap;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 65vh;
+        padding: 0;
+    }
+}
+@media (max-width: 575.98px) {
+    #IntroEvent .intro-links {
+        justify-content: center;
+        padding: 0.625rem;
+        height: 65vh;
+    }
+}
+@media (max-width: 375px) {
+    #IntroEvent .intro-links {
+        height: 75vh;
+    }
+}
+
+@media (max-width: 375px) {
+    #IntroEvent .mb-pd-t {
+        padding-top :5rem;
+		margin-bottom: 6rem !important;
+    }
+}
+
+
+@media (max-width: 1023px) and (orientation: landscape) {
+    #IntroEvent .intro-links {
+        flex-direction: row;
+        justify-content: center;
+        padding: 0;
+        height: 25vh;
+    }
+}
+#IntroEvent .intro-links .hover-effect-wrapper {
+    position: relative;
+    overflow: visible;
+    text-decoration: none;
+    width: 24.0625rem;
+    height: 8.75rem;
+    margin: 0 0.3125rem;
+}
+@media (max-width: 1199.98px) {
+    #IntroEvent .intro-links .hover-effect-wrapper {
+        width: 30%;
+        height: 7.5rem;
+    }
+}
+@media (max-width: 991.98px) {
+    #IntroEvent .intro-links .hover-effect-wrapper {
+        width: 24.0625rem;
+    }
+}
+@media (max-width: 767.98px) {
+    #IntroEvent .intro-links .hover-effect-wrapper {
+        width: 100%;
+        margin: 0;
+    }
+}
+@media (max-width: 575.98px) {
+    #IntroEvent .intro-links .hover-effect-wrapper:not(:last-child) {
+        margin-bottom: 0.625rem;
+    }
+}
+@media (max-width: 1023px) and (orientation: landscape) {
+    #IntroEvent .intro-links .hover-effect-wrapper {
+        width: 30%;
+        margin-left: 0;
+        height: 4.5rem;
+        margin-left: 0;
+        margin-bottom: 0 !important;
+    }
+    #IntroEvent .intro-links .hover-effect-wrapper:not(:last-child) {
+        margin-right: 10px;
+    }
+}
+@media (max-width: 320px) {
+    #IntroEvent .intro-links .hover-effect-wrapper {
+        height: 5.5rem;
+    }
+}
+#IntroEvent .intro-links .hover-effect-wrapper .zone-detail {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    padding: 3.4375rem 1.25rem 0.3125rem;
+    font-size: 1.25rem;
+    line-height: 1.1;
+    color: #fff;
+    background-color: #222221;
+}
+@media (max-width: 1199.98px) {
+    #IntroEvent .intro-links .hover-effect-wrapper .zone-detail {
+        padding: 2.8125rem 0.9375rem 0.625rem;
+    }
+}
+@media (max-width: 767.98px) {
+    #IntroEvent .intro-links .hover-effect-wrapper .zone-detail {
+        padding: 2.8125rem 1.25rem 0.625rem;
+    }
+}
+@media (max-width: 1023px) and (orientation: landscape) {
+    #IntroEvent .intro-links .hover-effect-wrapper .zone-detail {
+        font-size: 1rem;
+        padding: 1.875rem 0.625rem 0.625rem;
+    }
+}
+@media (max-width: 320px) {
+    #IntroEvent .intro-links .hover-effect-wrapper .zone-detail {
+        padding: 0.625rem;
+    }
+}
+#IntroEvent .intro-links .hover-effect-wrapper:hover .intro-link {
+    transform: translateY(-70%);
+}
+@media (max-width: 1023px) and (orientation: landscape) {
+    #IntroEvent .intro-links .hover-effect-wrapper:hover .intro-link {
+        transform: none;
+    }
+}
+@media (max-width: 767.98px) {
+    #IntroEvent .intro-links .hover-effect-wrapper:hover .intro-link {
+        transform: none;
+    }
+}
+#IntroEvent .intro-links .intro-link {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 8.75rem;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+}
+@media (max-width: 1199.98px) {
+    #IntroEvent .intro-links .intro-link {
+        padding-left: 6.5rem;
+        font-size: 2.5rem;
+    }
+}
+@media (max-width: 991.98px) {
+    #IntroEvent .intro-links .intro-link {
+        padding-left: 9.375rem;
+        padding-right: 0.5rem;
+        font-size: 2.5rem;
+    }
+}
+@media (max-width: 1023px) and (orientation: landscape) {
+    #IntroEvent .intro-links .intro-link {
+        padding-left: 70px;
+        padding-right: 10px;
+        font-size: 26px;
+    }
+}
+@media (max-width: 320px) {
+    #IntroEvent .intro-links .intro-link {
+        padding-left: 7.5rem;
+    }
+}
+#IntroEvent .intro-links .intro-link::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    bottom: 0;
+    background-repeat: no-repeat;
+    background-position: bottom left;
+}
+@media (max-width: 1199.98px) {
+    #IntroEvent .intro-links .intro-link::before {
+        background-size: 70%;
+    }
+}
+@media (max-width: 991.98px) {
+    #IntroEvent .intro-links .intro-link::before {
+        background-size: 90%;
+    }
+}
+@media (max-width: 1023px) and (orientation: landscape) {
+    #IntroEvent .intro-links .intro-link::before {
+        background-size: 45%;
+    }
+}
+@media (max-width: 320px) {
+    #IntroEvent .intro-links .intro-link::before {
+        background-size: 70%;
+    }
+}
+#IntroEvent .intro-links .intro-link .zone-description {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #222221;
+    font-size: 1.35rem;
+    padding-bottom: 0.4rem;
+    margin-bottom: 0.4rem;
+}
+@media (max-width: 1199.98px) {
+    #IntroEvent .intro-links .intro-link .zone-description {
+        font-size: 1.25rem;
+    }
+}
+@media (max-width: 1023px) and (orientation: landscape) {
+    #IntroEvent .intro-links .intro-link .zone-description {
+        font-size: 1rem;
+    }
+}
+@media (max-width: 320px) {
+    #IntroEvent .intro-links .intro-link .zone-description {
+        font-size: 1rem;
+    }
+}
+#IntroEvent .intro-links .intro-link .zone-description i {
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+}
+#IntroEvent .intro-links .intro-link .zone-description::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-bottom: 4px solid #b2bb1e;
+    width: 27px;
+}
+#IntroEvent .intro-links .intro-link .zone-name {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    font-weight: 700;
+    line-height: 0.7;
+    text-transform: uppercase;
+    color: #006664;
+}
+#IntroEvent .intro-links .intro-link .zone-name span:first-child {
+    font-size: 3.125rem;
+}
+@media (max-width: 1199.98px) {
+    #IntroEvent .intro-links .intro-link .zone-name span:first-child {
+        font-size: 2.5rem;
+    }
+}
+@media (max-width: 1023px) and (orientation: landscape) {
+    #IntroEvent .intro-links .intro-link .zone-name span:first-child {
+        font-size: 1.7rem;
+    }
+}
+@media (max-width: 320px) {
+    #IntroEvent .intro-links .intro-link .zone-name span:first-child {
+        font-size: 2rem;
+    }
+}
+#IntroEvent .intro-links .intro-link .zone-name span:last-child {
+    font-size: 2.5rem;
+}
+@media (max-width: 1199.98px) {
+    #IntroEvent .intro-links .intro-link .zone-name span:last-child {
+        font-size: 2rem;
+    }
+}
+@media (max-width: 1023px) and (orientation: landscape) {
+    #IntroEvent .intro-links .intro-link .zone-name span:last-child {
+        font-size: 1.5rem;
+    }
+}
+@media (max-width: 320px) {
+    #IntroEvent .intro-links .intro-link .zone-name span:last-child {
+        font-size: 1.8rem;
+    }
+}
+#IntroEvent .intro-links .intro-link.community-link {
+    background-image: url(https://ku.ac.th/assets/images/intro-event/intro_btn1.png);
+}
+#IntroEvent .intro-links .intro-link.community-link::before {
+    width: 11.3125rem;
+    height: 10rem;
+    background-image: url(https://ku.ac.th/assets/images/intro-event/intro_student1.png);
+}
+#IntroEvent .intro-links .intro-link.newcomer-link {
+    background-image: url(https://ku.ac.th/assets/images/intro-event/intro_btn2.png);
+}
+#IntroEvent .intro-links .intro-link.newcomer-link::before {
+    width: 11.625rem;
+    height: 10.1875rem;
+    background-image: url(https://ku.ac.th/assets/images/intro-event/intro_student2.png);
+}
+#IntroEvent .intro-links .intro-link.partner-link {
+    background-image: url(https://ku.ac.th/assets/images/intro-event/intro_btn3.png);
+}
+#IntroEvent .intro-links .intro-link.partner-link::before {
+    width: 9.75rem;
+    height: 10.125rem;
+    background-image: url(https://ku.ac.th/assets/images/intro-event/intro_student3.png);
+}
+#IntroEvent .intro-links .copyright {
+    position: fixed;
+    bottom: 1.25rem;
+    width: 100%;
+    font-size: 1.25rem;
+    text-align: center;
+}
+@media (max-width: 1440px) {
+    #IntroEvent .intro-links .copyright {
+        bottom: 0;
+    }
+}
+@media (max-width: 1023px) and (orientation: landscape) {
+    #IntroEvent .intro-links .copyright {
+        display: none;
+    }
+}
+#IntroEvent .snow {
+    position: absolute;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    -webkit-filter: blur(4px);
+    filter: blur(4px);
+    overflow: hidden;
+}
+#IntroEvent .snow .svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+#IntroEvent #snow-top-layer {
+    will-change: transform;
+    transform: translateY(-768px);
+    -webkit-animation: fall 100s infinite linear;
+    animation: fall 100s infinite linear;
+}
+#IntroEvent #snow-bottom-layer {
+    will-change: transform;
+    transform: translateY(-768px);
+    -webkit-animation: fall 150s infinite linear;
+    animation: fall 150s infinite linear;
+}
+@-webkit-keyframes fall {
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes fall {
+    100% {
+        transform: translateY(0);
+    }
+} 
