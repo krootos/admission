@@ -29,41 +29,33 @@
                             <!-- Large device -->
                             <source media="(min-width: 768.7px)" srcset="assets/images/building.jpg">
                             <!-- Fallback -->
-                            <img src="assets/images/building.jpg" alt="">
+                            <img src="assets/images/building.jpg" alt="โรงเรียนธาตุนารายณ์วิทยา">
                         </picture>
                     </div>
 
+                    <!-- <div class="swiper-slide position-relative">
+                        <a href="#" target="_blank">
+                            <picture>
+                                <source media="(max-width: 768px)" srcset="assets/images/boss_s.png">
+                                <source media="(min-width: 768.7px)" srcset="assets/images/bosss.png">
+                                <img src="assets/images/boss.jpg" alt="ผู้อำนวยการโรงเรียนธาตุนารายณ์วิทยา">
+                            </picture>
+                        </a>
+                    </div> -->
+
+                    
+                    
                     <div class="swiper-slide position-relative">
                         <a href="#" target="_blank">
                             <picture>
                                 <!-- Small device -->
-                                <source media="(max-width: 768px)" srcset="assets/images/boss_s.png">
+                                    <source media="(max-width: 768px)" srcset="assets/images/admission_s.jpg">
                                 <!-- Large device -->
-                                <source media="(min-width: 768.7px)" srcset="assets/images/bosss.png">
+                                    <source media="(min-width: 768.7px)" srcset="assets/images/admission.jpg">
                                 <!-- Fallback -->
-                                <img src="assets/images/boss.jpg" alt="ผู้อำนวยการโรงเรียนธาตุนารายณ์วิทยา">
+                                    <img src="assets/images/admission.jpg" alt="รับสมัครนักเรียนประจำปีการศึกษา 2565">
                             </picture>
-
-
-
-
-
                         </a>
-                    </div>
-
-                    
-                    
-                    <!-- <div class="swiper-slide position-relative"> -->
-                        <!-- <a href="#" target="_blank"> -->
-                            <!-- <picture> -->
-                                <!-- Small device -->
-                                    <!-- <source media="(max-width: 768px)" srcset="assets/images/admission_s.jpg"> -->
-                                <!-- Large device -->
-                                    <!-- <source media="(min-width: 768.7px)" srcset="assets/images/admission.jpg"> -->
-                                <!-- Fallback -->
-                                    <!-- <img src="assets/images/admission.jpg" alt="ผู้อำนวยการโรงเรียนธาตุนารายณ์วิทยา"> -->
-                            <!-- </picture> -->
-                        <!-- </a> -->
                     <!-- </div> -->
 
 

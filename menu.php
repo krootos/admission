@@ -35,24 +35,6 @@
                         </ul>
                     </nav>
 
-
-                    <!-- People Group Menu -->
-                    <!-- <nav>
-                      <ul class="people-group-menu no-bullets d-flex flex-nowrap ">
-
-                          <li>
-                              <a class=" text-decoration-none  " href="#"><span>ครูที่ปรึกษา</span></a>
-                          </li>
-
-                          <li>
-                              <a class=" text-decoration-none  " href="#"><span>ครูผู้ดูแลกิจกรรมพัฒนาผู้เรียน</span></a>
-                          </li>
-
-                      </ul>
-                      </nav> -->
-
-
-
                     <div class="d-flex page-options ml-2">
                         <div>
                             <ul class="no-bullets d-flex lang-selector">
@@ -209,7 +191,7 @@
 
                         <!-- Register Admission TNW -->
                         <div class="header-dropdown-menu" id="tnw-sub-menu-275" data-sub="tnw-sub-menu-275">
-                            <div class="header-dropdown-menu__content col-3">
+                            <div class="header-dropdown-menu__content col-9">
                                 <ul>
                                     <li><a href="#">ระเบียบการรับสมัครห้องเรียนพิเศษคณิตศาสตร์ วิทยาศาสตร์ และเทคโนโลยี (MST) ม.1</a>
                                         <ul class="sub_3" style="margin-left: 20px;">
