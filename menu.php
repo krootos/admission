@@ -23,15 +23,13 @@
                     <nav>
 
                         <ul class="account-menu  no-bullets d-flex lang-selector">
-
-
-                            <!-- <li>
-                                <a href="#" class="login-link ">
+                            <li>
+                                <a href="admission/" class="login-link ">
                                     <span>
                                         <i class="fas fa-user-alt mr-1"></i>
                                         เข้าสู่ระบบ </span>
                                 </a>
-                            </li> -->
+                            </li>
                         </ul>
                     </nav>
 
@@ -80,7 +78,7 @@
                     <ul class="no-bullets">
 
                         <a href="index.php">
-                            <li> <button type="button"class="menu__item no-sub-menu">
+                            <li> <button type="button" class="menu__item no-sub-menu">
                                     หน้าแรก
                                 </button>
                             </li>
@@ -120,75 +118,7 @@
                     <div class="header-dropdown__bg"></div>
 
                     <div class="header-dropdown__wrap">
-                        <!-- Admission sub-menu -->
-
-
-                        <!-- Curriculum sub-menu -->
-
-
-                        <!-- Faculty and units sub-menu -->
-
-
-
-                        <div class="header-dropdown-menu" id="tnw-sub-menu-255">
-                            <div class="header-dropdown-menu__content">
-                                <ul>
-                                    <li><a href="/th/research-information" target="_self">ระเบียบการรับสมัครห้องเรียนพิเศษวิทยาศาสตร์ฯ(SMTE)</a></li>
-                                    <li><a href="https://www3.rdi.ku.ac.th/?cat=22" target="_blank">ระเบียบการรับสมัครห้องเรียนภาษาอังกฤษ(EP)</a>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </div>
-
-
-
-                        <!-- About KU -->
-                        <!-- <div class="header-dropdown-menu" id="ku-sub-menu-275" data-sub="tnw-sub-menu-smte">
-                            <div class="header-dropdown-menu__content col-3">
-                                <ul>
-
-                                    <li><a href="#" >ระเบียบการรับสมัครห้องเรียนพิเศษวิทยาศาสตร์ฯ(MST,SMTE) ม.1, ม.4</a>
-                                        <ul class="sub_3" style="margin-left: 20px;">
-                                            <li>
-                                                <a href="assets/regisDoc/ประกาศรับนักเรียน-ม.1ม.4-พิเศษวิทย์.pdf" target="_blank">ประกาศรับสมัครนักเรียนพิเศษวิทย์ฯ(MST,SMTE) ม.1, ม.4 </a>
-                                            </li>
-                                            <li>
-                                                <a href="assets/regisDoc/ใบรับรองผลการเรียนEP-ม.1.pdf" target="_blank">ใบรับรองผลการเรียนพิเศษวิทย์ฯ(MST) ม.1</a>
-                                            </li>
-                                            <li>
-                                                <a href="assets/regisDoc/ใบรับรองผลการเรียนEP-ม.4.pdf" target="_blank">ใบรับรองผลการเรียนพิเศษวิทย์ฯ(SMTE) ม.4</a>
-                                            </li>
-
-
-                                        </ul>
-                                    </li>
-
-                                    <li><a href="#">ระเบียบการรับสมัครห้องเรียนพิเศษภาษาอังกฤษ(EP) ม.1, ม.4</a>
-                                        <ul class="sub_3" style="margin-left: 20px;">
-                                            <li>
-                                                <a href="assets/regisDoc/ประกาศรับนักเรียนห้องEP.pdf" target="_blank">ประกาศรับสมัครนักเรียนพิเศษภาษาอังกฤษ(EP) ม.1, ม.4</a>
-                                            </li>
-                                            <li>
-                                                <a href="assets/regisDoc/ใบรับรองผลการเรียนEP-ม.1.pdf" target="_blank">ใบรับรองผลการเรียนพิเศษภาษาอังกฤษ(EP) ม.1</a>
-                                            </li>
-                                            <li>
-                                                <a href="assets/regisDoc/ใบรับรองผลการเรียนEP-ม.4.pdf" target="_blank">ใบรับรองผลการเรียนพิเศษภาษาอังกฤษ(EP) ม.4</a>
-                                            </li>
-
-                                        </ul>
-                                    </li>
-
-                                    
-
-
-                                </ul>
-
-
-                            </div>
-                        </div> -->
-
-
+                    
                         <!-- Register Admission TNW -->
                         <div class="header-dropdown-menu" id="tnw-sub-menu-275" data-sub="tnw-sub-menu-275">
                             <div class="header-dropdown-menu__content col-9">
@@ -235,103 +165,6 @@
 
                             </div>
                         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                        <div class="header-dropdown-menu" id="ku-sub-menu-275" data-sub="ku-sub-menu-275">
-                            <div class="header-dropdown-menu__content col-3">
-                                <ul>
-                                    <li><a href="/th/history-ku" target="_self">ประวัติ มก.</a>
-                                    <li><a href="/th/philosophy-vision-mission" target="_self">ปรัชญา วิสัยทัศน์ พันธกิจ</a>
-                                    <li><a href="/th/the-identity-of-ku" target="_self">สัญลักษณ์ มก.</a>
-                                    <li><a href="/th/university-information" target="_self">ข้อมูลมหาวิทยาลัย</a>
-                                        <ul class="sub_3" style="margin-left: 20px;">
-                                            <li>
-                                                <a href="/th/campus-information" target="_self">ข้อมูลวิทยาเขต</a>
-                                            </li>
-                                            <li>
-                                                <a href="/th/statistical-data" target="_self">ข้อมูลสถิติ</a>
-                                            </li>
-                                            <li>
-                                                <a href="https://ku.ac.th/ranking/KURanking6U.pdf" target="_blank">ผลการจัดอันดับมหาวิทยาลัยโลก</a>
-                                            </li>
-                                            <li>
-                                                <a href="/th/kustatute" target="_self">พระราชบัญญัติ มก.</a>
-                                            </li>
-                                        </ul>
-                                    <li><a href="/th/gallery-and-vdo" target="_self">คลังภาพและวิดีโอ</a>
-                                        <ul class="sub_3" style="margin-left: 20px;"></ul>
-                                    <li><a href="https://ku.ac.th/th/kulogo" target="_self">ดาวน์โหลด</a>
-                                </ul>
-                                <ul>
-                                    <li><a href="#">โครงสร้างมหาวิทยาลัย</a>
-                                        <ul class="sub_3" style="margin-left: 20px;">
-                                            <li>
-                                                <a href="/th/organize-structure" target="_self">แผนผังโครงสร้างการบริหาร</a>
-                                            </li>
-                                            <li>
-                                                <a href="/th/section-structure" target="_self">แผนผังโครงสร้างส่วนงาน</a>
-                                            </li>
-                                            <li>
-                                                <a href="/th/university-council" target="_self">กรรมการสภามหาวิทยาลัย</a>
-                                            </li>
-                                            <li>
-                                                <a href="/th/university-affairs-board" target="_self">คณะกรรมการส่งเสริมกิจการมหาวิทยาลัย</a>
-                                            </li>
-                                            <li>
-                                                <a href="/th/university-administrators" target="_self">คณะผู้บริหารมหาวิทยาลัย</a>
-                                            </li>
-                                            <li>
-                                                <a href="/th/dean-and-director" target="_self">คณบดีและผู้อำนวยการ</a>
-                                            </li>
-                                            <li>
-                                                <a href="/th/president-s-palace" target="_self">ทำเนียบอธิการบดี</a>
-                                            </li>
-                                        </ul>
-                                </ul>
-                                <ul>
-                                    <li><a href="/th/around-university-fence" target="_self">รอบรั้วมหาวิทยาลัย</a>
-                                        <ul class="sub_3" style="margin-left: 20px;">
-                                            <li>
-                                                <a href="/th/landmark" target="_self">สถานที่สำคัญ</a>
-                                            </li>
-                                            <li>
-                                                <a href="/th/learning-resources" target="_self">แหล่งเรียนรู้</a>
-                                            </li>
-                                            <li>
-                                                <a href="/th/facility" target="_self">สิ่งอำนวยความสะดวก</a>
-                                            </li>
-                                            <li>
-                                                <a href="/th/sports-and-health" target="_self">กีฬาและสุขภาพ</a>
-                                            </li>
-                                            <li>
-                                                <a href="/th/ku-products" target="_self">ผลิตภัณฑ์ มก.</a>
-                                            </li>
-                                        </ul>
-                                </ul>
-
-                            </div>
-                        </div>
-
-
-
                     </div>
 
 

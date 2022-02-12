@@ -1,11 +1,13 @@
   <?php
   function logindata($ldata){
+    include "conn.php";
+
     $no = $ldata[0];
     $pwd = $ldata[1];
-  $strSQL   = "SELECT * FROM sas_register WHERE RegisNO = '" . $no . "'and RegisPWD = '" . $pwd . "'";
-    $objQuery = mysql_query($strSQL) or die(mysql_error());
-
-    $objResult = mysql_fetch_array($objQuery);
+    $strSQL   = "SELECT * FROM sas_register WHERE RegisNO = '" . $no . "'and RegisPWD = '" . $pwd . "'";
+    $objQuery = mysqli_query($connected,$strSQL) or die(mysqli_error($connected));
+    $objResult = mysqli_fetch_array($objQuery);
+    
     if (!$objResult) {
         ?>
               <div class="alert alert-danger text-center" role="alert"><i><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> เลขที่ใบสมัครหรือรหัสผ่านไม่ถูกต้อง</i>
@@ -33,7 +35,7 @@
                 window.location="index.php";
         </script>
   <?php  }
-    mysql_close();
+    mysqli_close($connected);
 
 }
     ?>

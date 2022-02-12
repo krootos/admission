@@ -587,7 +587,7 @@ function updatedatabt2($nid, $data)
         <?php
 }
 
-    mysql_close($connected);
+    mysqli_close($connected);
 }
 
 function updatedatabt3($nid, $data)

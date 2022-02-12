@@ -1,16 +1,16 @@
 <?php
 session_start();
 
+include "conn.php";
 //<td><button type="button" name="update" class="btn btn-warning bt-xs update" id="' . $row["id"] . '">เปลี่ยน</button></td>
 //echo $_SESSION["NaID"];
 //<th width="15%">เปลี่ยน</th>
 $naid = $_SESSION["NaID"];
 
 if (isset($_POST["action"])) {
-  $connect = mysqli_connect("localhost", "admission_web", "MldwSCiq", "admission_web");
   if ($_POST["action"] == "fetch") {
     $query = "SELECT * FROM tbl_images WHERE NID = '" . $naid . "' ORDER BY id DESC";
-    $result = mysqli_query($connect, $query);
+    $result = mysqli_query($connected, $query);
     $output = '
     <div class="">
    <table class="table table-bordered table-striped">  
@@ -72,10 +72,10 @@ if (isset($_POST["action"])) {
       $date = date("Y-m-d H:i:s");
       $file_name = $date.$file_name;
       $query = "INSERT INTO tbl_images(filename,NID,doc) VALUES ('$file_name',$nid,'$doc')";
-      if (mysqli_query($connect, $query)) {
+      if (mysqli_query($connected, $query)) {
         $filename = compress_image($temp_name, "doc/" . $file_name, 35);
       } else {
-        mysqli_error($connect);
+        mysqli_error($connected);
         echo 'เพิ่มรูปภาพไม่สำเร็จ!!! "ภาพขนาดใหญ่เกินไป ขนาดภาพที่แนะนำ 2 MB"';
       }
     }
@@ -85,13 +85,13 @@ if (isset($_POST["action"])) {
     $file = $date.$file;
     $file = addslashes(file_get_contents($_FILES["image"]["tmp_name"]));
     $query = "UPDATE tbl_images SET name = '$file' WHERE id = '" . $_POST["image_id"] . "'";
-    if (mysqli_query($connect, $query)) {
+    if (mysqli_query($connected, $query)) {
       echo 'เปลี่ยนรูปภาพสำเร็จ';
     }
   }
   if ($_POST["action"] == "delete") {
     $query = "DELETE FROM tbl_images WHERE id = '" . $_POST["image_id"] . "'";
-    if (mysqli_query($connect, $query)) {
+    if (mysqli_query($connected, $query)) {
       echo 'ลบข้อมูลสำเร็จ';
     }
   }

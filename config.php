@@ -1,8 +1,5 @@
 <?php
-/*$host = "localhost"; // ส่วนมากมักเป็น localhost
-$user = "root"; // Username
-$pass = "1234"; // Password
-$dbname = "student"; // ชื่อฐานข้อมูล*/
+
 
 $host = "localhost"; // ส่วนมากมักเป็น localhost
 $dbname = "admission_web"; // ชื่อฐานข้อมูล
@@ -10,32 +7,28 @@ $user = "admission_web"; // Username
 $pass = "MldwSCiq"; // Password
 
 
-/*$host = "127.0.0.1:3306"; // ส่วนมากมักเป็น localhost
-$user = "kittisak"; // Username
-$pass = "076200207"; // Password
-$dbname = "student";  // ชื่อฐานข้อมูล */
 
 function conndb()
 {
     global $conn;
     global $host;
-    global $user;
-    global $pass;
+    global $username;
+    global $password;
     global $dbname;
-    $conn = mysql_connect($host, $user, $pass);
+    $conn = mysqli_connect($host, $username, $password);
 
-    mysql_query("SET NAMES 'utf8'");
-    mysql_select_db($dbname);
+    mysqli_query($conn,"SET NAMES 'utf8'");
+    mysqli_select_db($conn,$dbname);
     if (!$conn) {
         die("ไม่สามารถติดต่อกับฐานข้อมูลได้");
     }
 
-    mysql_select_db($dbname, $conn)
+    mysqli_select_db($conn, $dbname)
     or die("ไม่สามารถเลือกใช้งานฐานข้อมูลได้");
 }
 
 function closedb()
 {
     global $conn;
-    mysql_close($conn);
+    mysqli_close($conn);
 }

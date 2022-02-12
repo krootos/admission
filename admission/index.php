@@ -16,7 +16,7 @@ if (isset($_POST["login"], $_POST['txtRegisno'], $_POST['txtPwd'])) {
     <meta content="" name="author">
     <meta http-equiv=refresh content="600; url=../login.php?ses=destroy">
     <title>
-        T.N.W. Admission 2021
+        T.N.W. Admission 2022
     </title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>

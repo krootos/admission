@@ -7,7 +7,7 @@ if (isset($_POST["login"], $_POST['txtRegisno'], $_POST['txtPwd'])) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 
 <head>
     <meta charset="utf-8">
@@ -16,7 +16,7 @@ if (isset($_POST["login"], $_POST['txtRegisno'], $_POST['txtPwd'])) {
     <meta content="" name="description">
     <meta content="" name="author">
     <title>
-        T.N.W. Admission 2021
+        T.N.W. Admission 2022
     </title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
