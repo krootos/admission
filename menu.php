@@ -20,7 +20,7 @@
 
             <div class="menu-area">
                 <div class="d-flex top-part justify-content-end">
-                    <nav>
+                    <!-- <nav>
 
                         <ul class="account-menu  no-bullets d-flex lang-selector">
                             <li>
@@ -31,7 +31,7 @@
                                 </a>
                             </li>
                         </ul>
-                    </nav>
+                    </nav> -->
 
                     <div class="d-flex page-options ml-2">
                         <div>
