@@ -2,19 +2,20 @@
 //echo $_SESSION["NaID"];
 function insertregister($data)
 {
+    require_once 'conn.php';
     $sql = "INSERT INTO sas_register";
     $sql .= "(RegisNO, RegisPWD, RegisNaID)";
     $sql .= "VALUES ";
     $sql .= "('" . $data[0] . "','" . $data[1] . "','" . $data[0] . "')";
 
-    $result_register = mysql_query($sql);
+    $result_register = mysqli_query($connected, $sql);
 
     // if ($rowsnew > $rowsold) {
     if ($result_register) {
         $sql_selectnew = "SELECT * from sas_register WHERE RegisNaID = '" . $data[2] . "'";
-        $anew = mysql_query($sql_selectnew);
+        $anew = mysqli_query($connected, $sql_selectnew);
         if ($anew) {
-            $user = mysql_fetch_array($anew);
+            $user = mysqli_fetch_array($anew);
             $_SESSION["SUCCESS_REGISTER"] = 1; //สร้างตัวแปรเพื่เช็คว่ามีการ ลงทะเบียนข้อมูลไว้หรือยัง
             $_SESSION["REGISNO"] = $user["RegisNO"];
             $_SESSION["REGISPWD"] = $user["RegisPWD"];
@@ -158,12 +159,8 @@ function insertstudentdata($data1, $data2, $data3, $data4, $data5, $data6, $data
         $sql .= ",'" . $data7[5] . "','" . $data7[6] . "','" . $data7[7] . "','" . $data7[8] . "','" . $data7[9] . "','" . $createdate . "', '" . $data3[4] . "','" . $data6[4] . "','" . $data7[10] . "','" . $data7[11] . "','" . $data7[12] . "','" . $data7[13] . "','" . $data7[14] . "','" . $data7[15] . "','" . $data7[16] . "','" . $data7[17] . "','" . $data7[18] . "','" . $data6[5] . "','" . $data4[10] . "')";
     }
 
-    $success_Query = mysql_query($sql);
-    mysql_affected_rows();
-    //Query ???????? 3
-    /*$sql_selectnew = "SELECT * from sas_studentdata";
-    $anew          = mysql_query($sql_selectnew);
-    $rowsnew       = mysql_num_rows($anew);*/
+    $success_Query = mysqli_query($connected, $sql);
+    mysqli_affected_rows($connected);
 
     if ($success_Query) {
         $_SESSION["insertsuccess"] = 1;
@@ -179,7 +176,7 @@ function insertstudentdata($data1, $data2, $data3, $data4, $data5, $data6, $data
         </div>
 
 <?php }
-    //mysql_close();
+    mysqli_close($connected);
 } ?>
 
 
@@ -187,7 +184,7 @@ function insertstudentdata($data1, $data2, $data3, $data4, $data5, $data6, $data
 <?php
 function selectfirst($nid)
 {
-    include "conn.php";
+    require_once "conn.php";
 
     $sql_ex = "SELECT ExamStuNo, ExamNID, ExamID, b.id, b.ExamBuilding, b.ExamRoomNO
                 FROM sas_examno as a
@@ -208,27 +205,27 @@ function selectfirst($nid)
                 INNER JOIN province as pv
                 ON ap. PROVINCE_ID = pv. PROVINCE_ID
                 WHERE sd.NID = '" . $nid . "'";
-    $resultaz = mysql_query($sql_ex);
-    $resultstu = mysql_query($sql_studata);
-    $resultuser = mysql_query($sql_user);
+    $resultaz = mysqli_query($connected, $sql_ex);
+    $resultstu = mysqli_query($connected, $sql_studata);
+    $resultuser = mysqli_query($connected, $sql_user);
     //$rows       = mysql_num_rows($resultstu);
 
-    if (mysql_num_rows($resultaz) > 0) {
-        $ex = mysql_fetch_assoc($resultaz);
+    if (mysqli_num_rows($resultaz) > 0) {
+        $ex = mysqli_fetch_assoc($resultaz);
         $_SESSION["EX"][1] = $ex["ExamStuNo"];
         $_SESSION["EX"][2] = $ex["ExamID"];
         $_SESSION["EX"][3] = $ex["ExamBuilding"];
         $_SESSION["EX"][4] = $ex["ExamRoomNO"];
     }
 
-    if (mysql_num_rows($resultuser) > 0) {
-        $stuuser = mysql_fetch_array($resultuser);
+    if (mysqli_num_rows($resultuser) > 0) {
+        $stuuser = mysqli_fetch_array($resultuser);
         $_SESSION["CODE"] = $stuuser["RegisNO"];
         $_SESSION["ROLE"] = $stuuser["Role"];
     }
-    if (mysql_num_rows($resultstu) > 0) {
+    if (mysqli_num_rows($resultstu) > 0) {
         // do while loop
-        $studata = mysql_fetch_array($resultstu);
+        $studata = mysqli_fetch_array($resultstu);
         //$rows    = mysql_fetch_row($resultstu);
         //echo $rows[1];
         echo ""; //BBBBBBBBBuuuuuuuuuuuuuuuuuuuugggggggggggggggggggggggggg
@@ -342,7 +339,9 @@ function selectfirst($nid)
                                         <div class="modal-header">
                                             <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
                                             <h4 class="modal-title px-5">เพิ่มรูปภาพเอกสารประกอบการสมัคร <br>
-                                                <span class="text-danger px-5">***หากไม่มีเอกสารการสมัครถือว่าไม่สมบูรณ์ <?php //echo date("Y-m-d H:i:s");?></span></h4>
+                                                <span class="text-danger px-5">***หากไม่มีเอกสารการสมัครถือว่าไม่สมบูรณ์ <?php //echo date("Y-m-d H:i:s");
+                                                                                                                            ?></span>
+                                            </h4>
                                         </div>
                                         <div class="my-2 px-5">
                                             <form id="image_form" method="post" enctype="multipart/form-data">
@@ -583,7 +582,7 @@ function selectfirst($nid)
 
                             <td>
                                 <?php
-                                if ($ex["ExamStuNo"] == "") {
+                                if (@$ex["ExamStuNo"] == "") {
                                     echo "<span style='color:#ff0000'>รอการออกเลขประจำตัวผู้สมัครสอบ </span>";
                                 } else { ?>
                                     <a href="fpdf/MyPDF/<?php echo $pdf_file; ?>" target="_blank">
@@ -616,10 +615,10 @@ function selectfirst($nid)
 
                         <?php
                         $sql_other = "SELECT * FROM sas_other WHERE NID = '" . $nid . "'";
-                        $resultother = mysql_query($sql_other);
+                        $resultother = mysqli_query($connected, $sql_other);
                         //$rows       = mysql_num_rows($resultstu);
-                        if (mysql_num_rows($resultother) > 0) {
-                            $otdata = mysql_fetch_array($resultother);
+                        if (mysqli_num_rows($resultother) > 0) {
+                            $otdata = mysqli_fetch_array($resultother);
 
                             $h1 = substr($otdata["HID"], 0, 4);
                             $h2 = substr($otdata["HID"], 4, 6);
@@ -650,11 +649,12 @@ function selectfirst($nid)
                     </thead>
                     <tbody>
                         <tr>
-                             <td>
-                                <?php //echo '<button onclick="GetUserDetailsFa(' . $_SESSION["NaID"] . ')" class="btn btn-success">เพิ่มข้อมูลเพิ่มเติมเพื่อให้เจ้าหน้าที่พิมพ์ใบมอบตัว</button>'; ?>
+                            <td>
+                                <?php //echo '<button onclick="GetUserDetailsFa(' . $_SESSION["NaID"] . ')" class="btn btn-success">เพิ่มข้อมูลเพิ่มเติมเพื่อให้เจ้าหน้าที่พิมพ์ใบมอบตัว</button>'; 
+                                ?>
                                 <!--button class="btn btn-success" data-toggle="modal" data-target="#add_new_record_modal">เพิ่มข้อมูลเพิ่มเติมเพื่อให้เจ้าหน้าที่พิมพ์ใบมอบตัว
                                 </button-->
-                            </td> 
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -699,7 +699,7 @@ function selectfirst($nid)
             }
         }
 
-        mysql_close($connected);
+        mysqli_close($connected);
     }
 ?>
 
@@ -708,10 +708,11 @@ function selectfirst($nid)
 function SelectAfterRegister($nid) // ฟังก์ชั่นหลังจากลงทะเบียนแล้ว
 
 {
+    require_once 'conn.php';
     $sql_selectAfter = "SELECT * from sas_register WHERE RegisNaID = '" . $nid . "'";
-    $after = mysql_query($sql_selectAfter);
+    $after = mysqli_query($connected, $sql_selectAfter);
     if ($after) {
-        $user = mysql_fetch_array($after);
+        $user = mysqli_fetch_array($after);
 
 ?>
         <div class="caption-full">
@@ -755,7 +756,7 @@ function updatedatabt1($nid, $data)
     $strSQL .= "TYPE = '" . $data . "' ";
     //$strSQL .=",hid = '".$data[1]."' ";
     $strSQL .= "WHERE NID = '" . $nid . "' ";
-    $objQuery = mysql_query($strSQL);
+    $objQuery = mysqli_query($connected, $strSQL);
     //mysql_affected_rows();
 
     if ($objQuery) { ?>
@@ -776,7 +777,7 @@ function updatedatabt1($nid, $data)
     <?php
     }
 
-    mysql_close($connected);
+    mysqli_close($connected);
 }
 
 function updatedatabt2($nid, $data)
@@ -795,7 +796,7 @@ function updatedatabt2($nid, $data)
     $strSQL .= ",GROUPBLOOD = '" . $data[9] . "' ";
     $strSQL .= ",stuIDold = '" . $data[10] . "' ";
     $strSQL .= "WHERE NID = '" . $nid . "' ";
-    $objQuery = mysql_query($strSQL);
+    $objQuery = mysqli_query($connected, $strSQL);
     //mysql_affected_rows();
 
     if ($objQuery) { ?>
@@ -816,7 +817,7 @@ function updatedatabt2($nid, $data)
     <?php
     }
 
-    mysql_close($connected);
+    mysqli_close($connected);
 }
 
 function updatedatabt3($nid, $data)
@@ -838,7 +839,7 @@ function updatedatabt3($nid, $data)
     $strSQL .= ",TEL = '" . $data[7] . "' ";
     $strSQL .= ",EMAIL = '" . $data[8] . "' ";
     $strSQL .= "WHERE NID = '" . $nid . "' ";
-    $objQuery = mysql_query($strSQL);
+    $objQuery = mysqli_query($connected, $strSQL);
     //mysql_affected_rows();
 
     if ($objQuery) { ?>
@@ -859,7 +860,7 @@ function updatedatabt3($nid, $data)
     <?php
     }
 
-    mysql_close($connected);
+    mysqli_close($connected);
 }
 
 function updatedatabt4($nid, $data)
@@ -875,7 +876,7 @@ function updatedatabt4($nid, $data)
         $strSQL .= ",MORE = '" . $data[3] . "' ";
     }
     $strSQL .= "WHERE NID = '" . $nid . "' ";
-    $objQuery = mysql_query($strSQL);
+    $objQuery = mysqli_query($connected, $strSQL);
     //mysql_affected_rows();
 
     if ($objQuery) { ?>
@@ -896,7 +897,7 @@ function updatedatabt4($nid, $data)
     <?php
     }
 
-    mysql_close($connected);
+    mysqli_close($connected);
 }
 
 function updatedatabt41($nid, $data)
@@ -907,7 +908,7 @@ function updatedatabt41($nid, $data)
     $strSQL .= "OPTIONSPECIAL = '" . $data[1] . "' ";
 
     $strSQL .= "WHERE NID = '" . $nid . "' ";
-    $objQuery = mysql_query($strSQL);
+    $objQuery = mysqli_query($connected, $strSQL);
     //mysql_affected_rows();
 
     if ($objQuery) { ?>
@@ -928,7 +929,7 @@ function updatedatabt41($nid, $data)
     <?php
     }
 
-    mysql_close($connected);
+    mysqli_close($connected);
 }
 
 function updatedatabt42($nid, $data)
@@ -938,7 +939,7 @@ function updatedatabt42($nid, $data)
     $strSQL = "UPDATE sas_studentdata SET ";
     $strSQL .= "MORE = '" . $data[1] . "' ";
     $strSQL .= "WHERE NID = '" . $nid . "' ";
-    $objQuery = mysql_query($strSQL);
+    $objQuery = mysqli_query($connected, $strSQL);
     //mysql_affected_rows();
 
     if ($objQuery) { ?>
@@ -959,7 +960,7 @@ function updatedatabt42($nid, $data)
     <?php
     }
 
-    mysql_close($connected);
+    mysqli_close($connected);
 }
 
 function updatedatabt5($nid, $datadd)
@@ -976,7 +977,7 @@ function updatedatabt5($nid, $datadd)
     }
     $strSQL .= ",DAYCOME = '" . $datadd[4] . "' ";
     $strSQL .= "WHERE NID = '" . $nid . "' ";
-    $objQuery = mysql_query($strSQL);
+    $objQuery = mysqli_query($connected, $strSQL);
     //mysql_affected_rows();
 
     if ($objQuery) { ?>
@@ -997,7 +998,7 @@ function updatedatabt5($nid, $datadd)
     <?php
     }
 
-    mysql_close($connected);
+    mysqli_close($connected);
 }
 
 function updatedatabt6($nid, $data)
@@ -1010,7 +1011,7 @@ function updatedatabt6($nid, $data)
     $strSQL .= ",ID_PROVINCE_SC = '" . $data[3] . "' ";
     $strSQL .= ",schoolsecond = '" . $data[4] . "' ";
     $strSQL .= "WHERE NID = '" . $nid . "' ";
-    $objQuery = mysql_query($strSQL);
+    $objQuery = mysqli_query($connected, $strSQL);
     //mysql_affected_rows();
 
     if ($objQuery) { ?>
@@ -1031,7 +1032,7 @@ function updatedatabt6($nid, $data)
     <?php
     }
 
-    mysql_close($connected);
+    mysqli_close($connected);
 }
 
 function updatedatabt7($nid, $data)
@@ -1078,7 +1079,7 @@ function updatedatabt7($nid, $data)
     }
 
     $strSQL .= "WHERE NID = '" . $nid . "' ";
-    $objQuery = mysql_query($strSQL);
+    $objQuery = mysqli_query($connected, $strSQL);
     //mysql_affected_rows();
 
     if ($objQuery) { ?>
@@ -1099,7 +1100,7 @@ function updatedatabt7($nid, $data)
 <?php
     }
 
-    mysql_close($connected);
+    mysqli_close($connected);
 }
 ?>
 
@@ -1109,8 +1110,8 @@ function selectcomeschool()
     include "conn.php";
 
     $sql_studata = "SELECT * FROM sas_studentdata";
-    $resultstu = mysql_query($sql_studata);
-    $rows = mysql_num_rows($resultstu);
+    $resultstu = mysqli_query($connected, $sql_studata);
+    $rows = mysqli_num_rows($resultstu);
 
     // if ($selectdata = mysql_fetch_array($resultstu)) {
     $d22 = 0;
@@ -1125,7 +1126,7 @@ function selectcomeschool()
     $M26 = 0;
     $M27 = 0;
 
-    while ($row = mysql_fetch_array($resultstu)) {
+    while ($row = mysqli_fetch_array($resultstu)) {
         //printf("ID: %s  Name: %d", $row["SID"], $row["DAYCOME"]);
         if ($row["DAYCOME"] == 22) {
 
@@ -1187,8 +1188,8 @@ function selectcomeschool2562()
     include "conn.php";
 
     $sql_studata = "SELECT * FROM sas_studentdata";
-    $resultstu = mysql_query($sql_studata);
-    $rows = mysql_num_rows($resultstu);
+    $resultstu = mysqli_query($connected, $sql_studata);
+    $rows = mysqli_num_rows($resultstu);
 
     // if ($selectdata = mysql_fetch_array($resultstu)) {
     $d21 = 0;
@@ -1203,7 +1204,7 @@ function selectcomeschool2562()
     $M24 = 0;
     $M25 = 0;
 
-    while ($row = mysql_fetch_array($resultstu)) {
+    while ($row = mysqli_fetch_array($resultstu)) {
         //printf("ID: %s  Name: %d", $row["SID"], $row["DAYCOME"]);
         if ($row["DAYCOME"] == 21) {
 
@@ -1264,10 +1265,10 @@ function selectcomeschool2562()
 <?php
 function checktxtRegisno($txtregisno)
 {
-
+    require_once 'conn.php';
     $selectcheck = "SELECT * from sas_checkuser WHERE datacheck = '" . $txtregisno . "'";
-    $check_result2 = mysql_query($selectcheck);
-    if (mysql_num_rows($check_result2) > 0) {
+    $check_result2 = mysqli_query($connected, $selectcheck);
+    if (mysqli_num_rows($check_result2) > 0) {
         $checkdataequal = 1;
     } else {
         $checkdataequal = 0;

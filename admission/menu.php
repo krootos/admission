@@ -6,7 +6,7 @@
             <div class="logo-n-name position-relative d-flex align-items-center p-3">
                 <div class="logo-lightning"></div>
                 <a href="index.php" class="ku-logo">
-                    <img src="../assets/images/logo1.png" alt="TNW Logo" />
+                    <img src="../assets/images/logo.png" alt="TNW Logo" />
                 </a>
                 <div class="">
                     <a href="index.php">
@@ -50,7 +50,7 @@
                     <div style="margin: 0;">
                         <div class="containMarquee">
                             <span class="obj_marquee header-sub-menu-btn menu__item mr-3" data-target="admission-heading-sub-menu" aria-expanded="false" aria-controls="admission-heading-sub-menu">
-                                ระบบรับสมัครนักเรียนอนไลน์ โรงเรียนธาตุนารายณ์วิทยา ประจำปีการศึกษา 2564
+                                ระบบรับสมัครนักเรียนอนไลน์ โรงเรียนธาตุนารายณ์วิทยา ประจำปีการศึกษา 2565
                             </span>
                         </div>
                     </div>
@@ -65,7 +65,7 @@
                 <nav class="full-width-part">
                     <ul class="no-bullets">
 
-                        <a href="http://admission.tnw.ac.th/" target="_self">
+                        <a href="../" target="_self">
                             <li> <button type="button" class="menu__item no-sub-menu">
                                     กลับสู่หน้าหลัก
                                 </button>
@@ -146,25 +146,7 @@
                             session_destroy();
                         }
                         ?>
-                        <!-- <a href="guidebook.php">
-                            <li> <button type="button" class="menu__item no-sub-menu" onclick="window.open('guidebook.php'); ">
-                                    คู่มือการสมัคร
-                                </button>
-                            </li>
-                        </a>
-                        <a href="guidebook.php">
-                            <li> <button type="button" class="menu__item no-sub-menu" onclick="window.open('guidebook.php'); ">
-                                    ติดตามสถานะการสมัคร
-                                </button>
-                            </li>
-                        </a>
-                        <a href="guidebook.php">
-                            <li> <button type="button" class="menu__item no-sub-menu" onclick="window.open('guidebook.php'); ">
-                                    พิมพ์ใบสมัคร
-                                </button>
-                            </li>
-                        </a> -->
-
+            
 
                     </ul>
                     <ul>
