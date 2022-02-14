@@ -1,5 +1,5 @@
 <div class="my-2 p-3 bg-white rounded shadow">
-    <h5 class="border-bottom border-gray pb-2 mb-0 text-center" style="color: #23527c;">ลงทะเบียนผู้สมัครสอบ</h5>
+    <h3 class="border-bottom border-gray pb-2 mb-0 text-center" style="color: #23527c;">ลงทะเบียนผู้สมัครสอบ</h3>
     <span class="d-block">&nbsp;</span>
 
     <div class="row">
@@ -28,9 +28,6 @@
                                                                                                                                                                             echo $_GET["id_card"];
                                                                                                                                                                         } ?>">
 
-                    <!-- <label class="col-lg-4 control-label" for="formGroupInputLarge" style="color: #23527c;">
-                        <br> ยืนยันรหัสผ่าน :
-                    </label> -->
                     <input name="txtconPwd" class="form-control input-lg" id="inputPassword3" placeholder="ยืนยันรหัสผ่าน" type="hidden" data-match="#inputPassword" data-match-error="รหัสผ่านไม่ตรงกัน" required="" value="<?php if (isset($_GET["id_card"])) {
                                                                                                                                                                                                                                     echo $_GET["id_card"];
                                                                                                                                                                                                                                 } ?>" readonly>

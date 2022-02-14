@@ -127,7 +127,7 @@
                                 </li>
                             </a>
 
-                            <a class="navbar-nav" href="index.php?ses=destroy" onclick="if(confirm('ยืนยันการ Logout & Reset')) return true; else return false;">
+                            <a class="navbar-nav" href="./index.php?ses=destroy" onclick="if(confirm('ยืนยันการ Logout & Reset')) return true; else return false;">
 
                                 <li>
                                     <button type="button" class="menu__item no-sub-menu text-danger">
@@ -141,7 +141,7 @@
                         <?php }
                         if (isset($_GET["ses"]) && $_GET["ses"] == "destroy") {
                             echo "<script type=\"text/javascript\">";
-                            echo "window.location=\"../login.php\" ";
+                            echo "window.location=\"../admission/\" ";
                             echo "</script>";
                             session_destroy();
                         }
