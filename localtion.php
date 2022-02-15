@@ -6,7 +6,8 @@
     header ("Cache-Control: no-cache, must-revalidate");
     header ("Pragma: no-cache");
 
-    include "conn.php";
+    include "config.php";
+    conndb();
 
     $data = $_GET['data'];
     $val = $_GET['val'];
@@ -15,8 +16,8 @@
          if ($data=='province') { 
               echo "<select name='lbProvince' class=\"form-control input-lg\" onChange=\"dochange('amphur', this.value)\" required=''>";
               echo "<option value=''>- เลือกจังหวัด -</option>\n";
-              $result=mysqli_query($connected, "select * from province order by PROVINCE_NAME");
-              while($row = mysqli_fetch_array($result)){ 
+              $result=mysql_query("select * from province order by PROVINCE_NAME");
+              while($row = mysql_fetch_array($result)){ 
                    //echo "<option value='$row[PROVINCE_ID]' >$row[PROVINCE_NAME]</option>" ; ?>
                   <option value="<?php echo $row["PROVINCE_ID"];?>"
         <?php  if(isset($_SESSION["EDITE"])){ if($_SESSION["EDITE"][20] == $row["PROVINCE_ID"])
@@ -30,8 +31,8 @@
               echo "<option value=''>- เลือกอำเภอ -</option>\n"; 
           if(isset($val)){    
 
-              $result=mysqli_query($connected, "SELECT * FROM amphur WHERE PROVINCE_ID= '$val' ORDER BY AMPHUR_NAME");
-              while($row = mysqli_fetch_array($result)){
+              $result=mysql_query("SELECT * FROM amphur WHERE PROVINCE_ID= '$val' ORDER BY AMPHUR_NAME");
+              while($row = mysql_fetch_array($result)){
 
                    echo "<option value=\"$row[AMPHUR_ID]\" >$row[AMPHUR_NAME]</option> " ;
 
@@ -40,8 +41,8 @@
           }else{ // ถ้าไม่พบตัวแปร $Val
               if(isset($_SESSION["EDITE"])){   //ถ้าพบตัวแปร แก้ไข  
                 //echo 5555555555555555;
-                $result=mysqli_query($connected, "SELECT * FROM amphur ORDER BY AMPHUR_NAME");
-                while($row = mysqli_fetch_array($result)){ 
+                $result=mysql_query("SELECT * FROM amphur ORDER BY AMPHUR_NAME");
+                while($row = mysql_fetch_array($result)){ 
                   // echo "<option value=\"$row[AMPHUR_ID]\" >$row[AMPHUR_NAME]</option> " ; ?>
                  <option value="<?php echo $row["AMPHUR_ID"];?>"
         <?php  if(isset($_SESSION["EDITE"])){ if($_SESSION["EDITE"][22] == $row["AMPHUR_ID"])
@@ -56,13 +57,13 @@
          } else if ($data=='district') {
               echo "<select name='lbDistrict' class=\"form-control input-lg\" >\n";
               echo "<option value=''>- เลือกตำบล -</option>\n";
-              $result=mysqli_query($connected, "SELECT * FROM district WHERE AMPHUR_ID= '$val' ORDER BY DISTRICT_NAME");
-              while($row = mysqli_fetch_array($result)){
+              $result=mysql_query("SELECT * FROM district WHERE AMPHUR_ID= '$val' ORDER BY DISTRICT_NAME");
+              while($row = mysql_fetch_array($result)){
                    echo "<option value=\"$row[DISTRICT_ID]\" >$row[DISTRICT_NAME]</option> \n" ;
               }
          }
          echo "</select>\n";
 
-        echo mysqli_error($connected);
-        mysqli_close($connected);
+        echo mysql_error();
+        closedb();
 ?>

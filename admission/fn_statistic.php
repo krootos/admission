@@ -6,8 +6,8 @@ function selectstatistic(){
     include "conn.php";
 
                 $sql_statis = "SELECT * FROM sas_studentdata";
-                $resultsta  = mysql_query($sql_statis);
-                $rows       = mysql_num_rows($resultsta);
+                $resultsta  = mysqli_query($connected, $sql_statis);
+                $rows       = mysqli_num_rows($resultsta);
 
                // if ($selectdata = mysql_fetch_array($resultstu)) {
                 $M1  = 0;
@@ -40,7 +40,7 @@ function selectstatistic(){
                 $checksec1   = "1";
                 $checksec4   = "4";
                 $rowall = $rows;
-                while ($row = mysql_fetch_array($resultsta)) {
+                while ($row = mysqli_fetch_array($resultsta)) {
                   //printf("ID: %s  Name: %d", $row["SID"], $row["DAYCOME"]); 
                   if(strcmp($row["TYPE"],$checksec1)==0){ 
                       $M1++;

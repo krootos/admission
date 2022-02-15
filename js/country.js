@@ -12,7 +12,7 @@
              req.onreadystatechange = function () { 
                   if (req.readyState==4) {
                        if (req.status==200) {
-                            document.getElementById(src).innerHTML= 'hi';
+                            document.getElementById(src).innerHTML=req.responseText;
                        } 
                   }
              };

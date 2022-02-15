@@ -142,5 +142,4 @@
         const LANG = 'th';
     </script>
 
-
 </head>
