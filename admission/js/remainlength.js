@@ -16,6 +16,23 @@ function remainLength(){
 	}
 }
 
+function remainLength1(){
+	//var objTextBox = document.getElementById('text1');
+	//var MaxLength = objTextBox.maxLength;
+	//var curLength = objTextBox.value.length;
+	//document.getElementById('text2').innerHTML = (MaxLength - curLength) + ' of ' + MaxLength;
+	if(document.formlogin.txtRegisno.value.length == 13 ){
+	document.getElementById('gen_button').disabled = false;
+	/*document.getElementById('gen_button').style.color = "#ffffff";
+	document.getElementById('gen_button').style.backgroundColor = "#3fd603";*/
+	}
+	else { 
+	document.getElementById('gen_button').disabled = true; 
+	/*document.getElementById('gen_button').style.color = "";
+	document.getElementById('gen_button').style.backgroundColor = "";*/
+	}
+}
+
 function chickCheckbox(){
 	//if(document.Formnext2.raOption.checked == true){if(document.Formnext2.raOption[4].checked){
 		if(document.getElementById('option4').checked){

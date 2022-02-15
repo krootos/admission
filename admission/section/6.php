@@ -1,4 +1,4 @@
-<?php include "conn.php"; ?>
+<?php include "../admission/conn.php" ?>
 <div class="caption-full">
 
     <!--h4 class="pull-right">$24.99</h4-->
@@ -82,9 +82,9 @@
 
                     <?php echo "<select name='lbPROVINCE_SC' class=\"form-control input-lg\" required=''>";
                     echo "<option value=''>- เลือกจังหวัด -</option>\n";
-                    $resultprovince = mysql_query("select * from province order by PROVINCE_NAME");
+                    $resultprovince = mysqli_query($connected,"select * from province order by PROVINCE_NAME");
 
-                    while ($rowpro = mysql_fetch_array($resultprovince)) { ?>
+                    while ($rowpro = mysqli_fetch_array($resultprovince)) { ?>
                         <option value="<?php echo $rowpro["PROVINCE_NAME"]; ?>" <?php if (isset($_SESSION["EDITE"])) {
                                                                                     if (strcmp($_SESSION["EDITE"][45], $rowpro["PROVINCE_NAME"]) == 0) {
                                                                                         echo "selected";

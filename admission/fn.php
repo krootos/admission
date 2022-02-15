@@ -184,7 +184,7 @@ function insertstudentdata($data1, $data2, $data3, $data4, $data5, $data6, $data
 <?php
 function selectfirst($nid)
 {
-    require_once "conn.php";
+    include "conn.php";
 
     $sql_ex = "SELECT ExamStuNo, ExamNID, ExamID, b.id, b.ExamBuilding, b.ExamRoomNO
                 FROM sas_examno as a
@@ -1178,7 +1178,7 @@ function selectcomeschool()
 
     // mysql_close($connected);
 
-    return array($d25, $d26, $d27, $d28, $M25, $M26, $M27, $M28);
+    return array($d25, $d26, $d27, $M25, $M26, $M27);
 }
 ?>
 

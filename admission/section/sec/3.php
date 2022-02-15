@@ -51,25 +51,29 @@
 
 
              <div class="row">
+
                  <div class="col-md-4 mb-3">
-                     <label class=" col-sm-3 control-label" for="formGroupInputLarge"> จังหวัด </label>
-                     <span id="province">
-                         <select class="form-control input-lg" required="">
-                             <option value="">- เลือกจังหวัด -</option>
-                         </select>
-                     </span>
-                     <label class=" col-sm-1 control-label" for="formGroupInputLarge">
-                         <a href="index.php?Refresh=refresh">
-                             <span class="glyphicon glyphicon-refresh">Refresh
-                             </span>
-                         </a>
+                     <label class="col-sm-1 control-label" for="formGroupInputLarge">
+                         ตำบล
                      </label>
+                     <?php
+                        if (isset($_SESSION["EDITE"])) {
+                            echo "ตำบล : " . $_SESSION["EDITE"][37];
+                        }
+                        ?>
+
+                     <?php if ((isset($_POST["btnEdite3"])) || (isset($_GET["edite"]))) { ?>
+                         <select class="form-control input-lg">
+                         <?php } else { ?>
+                             <input type="text" class="form-control" id="district" name="district" required>
+                         <?php } ?>
                  </div>
+
                  <div class="col-md-4 mb-3">
                      <label class="col-sm-3 control-label" for="formGroupInputLarge">
                          อำเภอ
                      </label>
-                     <!--label for="inputEmail3" class="col-sm-2 control-label">เลขที่ใบสมัคร</label-->
+
 
                      <?php
                         if (isset($_SESSION["EDITE"])) {
@@ -77,45 +81,26 @@
                         }
                         ?>
 
-                     <span id="amphur">
-                         <?php if ((isset($_POST["btnEdite3"])) || (isset($_GET["edite"]))) { ?>
-                             <select class="form-control input-lg">
-                             <?php } else { ?>
-                                 <select class="form-control input-lg" required="">
+                     <?php if ((isset($_POST["btnEdite3"])) || (isset($_GET["edite"]))) { ?>
 
-                                 <?php } ?>
-                                 <option value="">- เลือกอำเภอ -</option>
+                     <?php } else { ?>
+                         <input type="text" class="form-control" id="amphur" name="amphur" required>
 
-                                 </select>
-                     </span>
+                     <?php } ?>
+
+
                  </div>
+
                  <div class="col-md-4 mb-3">
+                     <label class=" col-sm-3 control-label" for="formGroupInputLarge"> จังหวัด </label>
+                     <input type="text" class="form-control" id="province" name="province" required>
+                     <label class=" col-sm-1 control-label" for="formGroupInputLarge">
 
-
-                     <label class="col-sm-1 control-label" for="formGroupInputLarge">
-                         ตำบล
                      </label>
-                     <!--label for="inputEmail3" class="col-sm-2 control-label">เลขที่ใบสมัคร</label-->
-
-                     <?php
-                        if (isset($_SESSION["EDITE"])) {
-                            echo "ตำบล : " . $_SESSION["EDITE"][37];
-                        }
-                        ?>
-                     <span id="district">
-                         <?php if ((isset($_POST["btnEdite3"])) || (isset($_GET["edite"]))) { ?>
-                             <select class="form-control input-lg">
-                             <?php } else { ?>
-                                 <select class="form-control input-lg" required="">
-                                 <?php } ?>
-                                 <option value="">- เลือกตำบล -</option>
-                                 </select>
-                     </span>
-
-
                  </div>
-             </div>
 
+
+             </div>
 
              <div class="row">
                  <div class="col-md-4 mb-3">
@@ -139,17 +124,17 @@
 
 
  <?php if (!isset($_GET["edite"])) { ?>
-     
-             <button class="btn btn-primary btn-lg btn-block" name="btnNext3" type="submit" value="Login">
-                 ถัดไป <span class="glyphicon glyphicon-random" aria-hidden="true"></span>
-             </button>
-       
+
+     <button class="btn btn-primary btn-lg btn-block" name="btnNext3" type="submit" value="Login">
+         ถัดไป <span class="glyphicon glyphicon-random" aria-hidden="true"></span>
+     </button>
+
  <?php } else { ?>
-     
-             <button class="btn btn-success btn-lg btn-block" name="btnEdite3" type="submit" value="Login" onclick="if(confirm('ยืนยันการแก้ไขส่วนที่3')) return true; else return false;">
-                 บันทึกการแก้ไขส่วนที่ 3 <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
-             </button>
-        
+
+     <button class="btn btn-success btn-lg btn-block" name="btnEdite3" type="submit" value="Login" onclick="if(confirm('ยืนยันการแก้ไขส่วนที่3')) return true; else return false;">
+         บันทึกการแก้ไขส่วนที่ 3 <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
+     </button>
+
  <?php } ?>
  </form>
 

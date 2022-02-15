@@ -7,7 +7,7 @@
             </label>
             <!--label for="inputEmail3" class="col-sm-2 control-label">เลขที่ใบสมัคร</label-->
             <div class="col-sm-12">
-                <input name="txtRegisno" class="form-control input-lg" id="user" placeholder="เลขประจำตัวประชาชน 13 หลัก" type="text" required="" maxlength="13" onkeyup="javascript:remainLength();" value="<?php if (isset($_POST["txtRegisno"])) {
+                <input name="txtRegisno" class="form-control input-lg" id="user" placeholder="เลขประจำตัวประชาชน 13 หลัก" type="text" required="" maxlength="13" onkeyup="javascript:remainLength1();" value="<?php if (isset($_POST["txtRegisno"])) {
                                                                                                                                                                                                                     echo $_POST["txtRegisno"];
                                                                                                                                                                                                                 } ?>">
                 </input>
@@ -28,7 +28,7 @@
                 <div>
                     <label>
                         <input type="checkbox">
-                        Remember me
+                        จดจำฉันไว้
                         </input>
                     </label>
                 </div>
@@ -44,7 +44,12 @@
                 </a>
             </div>
         </div>
+
+
+
     </form>
+
+
 
 
 </div>

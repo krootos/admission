@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+
 
 <div class="col-md-12 mb-3">
 

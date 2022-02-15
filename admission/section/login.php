@@ -39,7 +39,7 @@
       session_write_close(); ?>
 
       <script type="text/javascript">
-        window.location = "../index.php";
+        window.location = "../admission/index.php";
       </script>
   <?php  }
     mysqli_close($connected);

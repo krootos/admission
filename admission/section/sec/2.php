@@ -1,6 +1,6 @@
 <?php
 //include "fn.php";
-list($d27, $d28, $d29, $d30, $M27, $M28, $M29, $M30) = selectcomeschool();
+//list($d27, $d28, $d29, $d30, $M27, $M28, $M29, $M30) = selectcomeschool();
 /*
 echo $_SESSION['SAS1'][1];
 

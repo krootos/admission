@@ -6,7 +6,7 @@ if (isset($_POST["login"], $_POST['txtRegisno'], $_POST['txtPwd'])) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 
 <head>
     <meta charset="utf-8">
@@ -16,7 +16,7 @@ if (isset($_POST["login"], $_POST['txtRegisno'], $_POST['txtPwd'])) {
     <meta content="" name="author">
     <meta http-equiv=refresh content="600; url=../login.php?ses=destroy">
     <title>
-        T.N.W. Admission 2021
+        T.N.W. Admission 2022
     </title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
@@ -77,16 +77,17 @@ if (isset($_POST["login"], $_POST['txtRegisno'], $_POST['txtPwd'])) {
 
         }
     </style>
-    <script src="js/country.js"></script>
-    <script language=Javascript>
+    <!-- <script src="js/country.js"></script> -->
+    <!-- <script language=Javascript>
         window.onLoad = dochange('province', -1);
-    </script>
+    </script> -->
 
 
+    <link rel="stylesheet" href="./jquery.Thailand.js/dist/jquery.Thailand.min.css">
 
 </head>
 
-<body onload="remainLength()">
+<body>
 
     <!-- Navigation -->
     <?php include 'menu.php'; ?>
@@ -785,16 +786,18 @@ if (isset($_POST["login"], $_POST['txtRegisno'], $_POST['txtPwd'])) {
 
 
     <!-- Script for home -->
-    <script defer src="https://www.ku.ac.th/assets/js/components/news-and-activities.js" type="text/javascript">
-    </script>
-    <script defer src="https://www.ku.ac.th/assets/js/components/research.bundle.js" type="text/javascript"></script>
+    <!-- <script defer src="https://www.ku.ac.th/assets/js/components/news-and-activities.js" type="text/javascript">
+    </script> -->
+    <!-- <script defer src="https://www.ku.ac.th/assets/js/components/research.bundle.js" type="text/javascript"></script> -->
     <script defer src="https://www.ku.ac.th/assets/js/home/home.js" type="text/javascript"></script>
     <script defer src="https://www.ku.ac.th/assets/js/components/bus-station.js" type="text/javascript"></script>
     <script defer src="https://www.ku.ac.th/assets/js/components/hero-banner.js" type="text/javascript"></script>
     <script defer src="https://www.ku.ac.th/assets/js/vendor/rellax.min.js" type="text/javascript"></script>
-    <script defer src="assets/js/fac-n-cur.bundle.js" type="text/javascript"></script>
+    <!-- <script defer src="assets/js/fac-n-cur.bundle.js" type="text/javascript"></script> -->
 
     <script defer src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+
 
 
     <script type="text/javascript">
@@ -850,8 +853,23 @@ if (isset($_POST["login"], $_POST['txtRegisno'], $_POST['txtPwd'])) {
     </script>
 
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+
+    <!-- jQuery and Thailand-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="./jquery.Thailand.js/dependencies/JQL.min.js"></script>
+    <script type="text/javascript" src="./jquery.Thailand.js/dependencies/typeahead.bundle.js"></script>
+    <script type="text/javascript" src="./jquery.Thailand.js/dist/jquery.Thailand.min.js"></script>
+    <script>
+        $.Thailand({
+            database: './jquery.Thailand.js/database/db.json', // path หรือ url ไปยัง database
+            $district: $('#district'), // input ของตำบล
+            $amphoe: $('#amphur'), // input ของอำเภอ
+            $province: $('#province'), // input ของจังหวัด
+            $zipcode: $('#zipcode'), // input ของรหัสไปรษณีย์
+        });
+    </script>
+
+
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js">
@@ -861,9 +879,6 @@ if (isset($_POST["login"], $_POST['txtRegisno'], $_POST['txtPwd'])) {
     <script src="js/remainlength.js">
     </script>
 
-    <!-- datepicker js -->
-    <!--script src="js/jquery.js"></script-->
-    <!--script src="//getbootstrap.com/2.3.2/assets/js/google-code-prettify/prettify.js"></script-->
     <script src="datepicker/js/bootstrap-datepicker.js"></script>
     <script src="datepicker/js/bootstrap-datepicker-thai.js"></script>
     <script src="datepicker/js/locales/bootstrap-datepicker.th.js"></script>
@@ -931,10 +946,11 @@ if (isset($_POST["login"], $_POST['txtRegisno'], $_POST['txtPwd'])) {
     }
     ?>
 
-        <!-- Footer -->
-        <div class="container">
+    <!-- Footer -->
+    <div class="container">
         <hr>
         <footer>
+
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <p>
